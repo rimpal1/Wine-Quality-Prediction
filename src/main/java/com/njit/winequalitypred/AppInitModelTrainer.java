@@ -67,7 +67,7 @@ public class AppInitModelTrainer {
         RegressionEvaluator regressionEvaluator = new RegressionEvaluator()
                 .setLabelCol("quality").setPredictionCol("prediction").setMetricName("mae");
         double absoluteMeanError = regressionEvaluator.evaluate(testData);
-        System.out.println("Absolute mean error:" +absoluteMeanError);
+        System.out.println("Mean absolute error:" +absoluteMeanError);
     }
 
     public Dataset<Row> readAndTransformDataSet(SparkSession spark, String fileName){
